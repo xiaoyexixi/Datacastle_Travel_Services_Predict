@@ -42,8 +42,10 @@ def evaluate_score(predict, y_true):
 
 def main(options):
     print("load train test datasets")
-    train_all, y_train_all, id_train, test, id_test = pre_train()
-
+    train_all, y_train_all, id_train, test, id_test = pre_train()             #构建stacking第一层基模型的输入（训练集：纯特征，标签，样本标志-用户）
+                                                                              #输出train_pred_df   test_pred_df(用户  预测值)
+                                                                              #模块的作用
+            
     model_params = {
         'boosting_type': 'gbdt',
         'objective': 'binary',
