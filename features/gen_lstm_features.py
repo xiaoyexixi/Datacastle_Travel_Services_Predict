@@ -245,5 +245,5 @@ for i, (dev_index, val_index) in enumerate(kf.split(X_train, train_y)):
             pred_valid = session.run(bilstm.prediction_probs, feed_dict={bilstm.sentence: valid_data_wrapper.load_all_data()[0]})
             pred_test = session.run(bilstm.prediction_probs, feed_dict={bilstm.sentence: test_data_wrapper.load_all_data()[0]})
 
-            pred_train_full[val_index] = pred_valid[:, 1]
+            pred_train_full[val_index] = pred_valid[:, 1]                #取出第一列数据得到一纬数组
             pred_test_full += pred_test[:, 1]
