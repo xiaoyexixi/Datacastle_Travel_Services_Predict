@@ -64,7 +64,7 @@ print("")
 
 
 print('---> load train text dataset')
-train_seqs, train_y, test_seqs = data_utils.load_action_sequence_label_for_nn()
+train_seqs, train_y, test_seqs = data_utils.load_action_sequence_label_for_nn()                #输入在这里
 print('---> build vocabulary according this text dataset')
 document_len = np.array([len(x.split(" ")) for x in train_seqs])
 print('document_length, max = {}, mean = {}, min = {}'.format(document_len.max(), document_len.mean(),
